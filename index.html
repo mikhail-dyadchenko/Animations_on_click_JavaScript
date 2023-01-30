@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Animations JavaScript</title>
+    <style media="screen">
+      p {
+        font-size: 48px;
+      }
+      .circle {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-color: red;
+        display: inline-block;
+      }
+      .square {
+        height: 200px;
+        width: 200px;
+        display: inline-block;
+      }
+      .green {
+        background-color: green;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .red {
+        background-color: red;
+      }
+      .circle2 {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-color: orange;
+        display: inline-block;
+      }
+      .to_square {
+        border-radius: 0%;
+      }
+      .circle3 {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-color: purple;
+      }
+      .square2 {
+        height: 150px;
+        width: 150px;
+        background-color: pink;
+        position: absolute;
+        left: 500px;
+        top: 500px;
+        opacity: 70%;
+      }
+      .square3 {
+        height: 150px;
+        width: 150px;
+        background-color: gold;
+        position: absolute;
+        left: 500px;
+        top: 500px;
+        opacity: 70%;
+      }
+      .circle4 {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color: black;
+        opacity: 20%;
+      }
+      .circle5 {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color: black;
+        opacity: 99%;
+      }
+      .square4 {
+        height: 400px;
+        width: 400px;
+        background-color: navy;
+      }
+      .square5 {
+        height: 200px;
+        width: 400px;
+        background-color: red;
+      }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("div").click(function(){
+          $(this).addClass("to_square");
+        });
+      });
+      $(document).ready(function(){
+        $("div").click(function(){
+          $(this).removeClass("green");
+        });
+      });
+      $(document).ready(function(){
+        $("div").click(function(){
+          $(this).addClass("blue");
+        });
+      });
+      $(document).ready(function(){
+        $("div").click(function(){
+          $(this).toggleClass("red");
+        });
+      });
+      $(document).ready(function(){
+        $("circle2").click(function(){
+          $(this).toggleClass("to_square");
+        });
+      });
+      $(document).ready(function(){
+        $(".circle2").click(function(){
+          $(this).css({
+            width: function(index, value) {
+              let a = value.slice(0, -2);
+              if (a < 1000) {
+                return parseFloat (value) *1.1;
+              }
+            }
+          });
+        });
+      });
+      $(document).ready(function(){
+        $(".circle3").click(function(){
+          $(this).css({
+            width: function(index, value) {
+              let a = value.slice(0, -2);
+              if (a < 400) {
+                return parseFloat (value) *1.1;
+              }
+            }
+          });
+        });
+      });
+      $(document).ready(function(){
+        $(".circle3").click(function(){
+          $(this).css({
+            height: function(index, value) {
+              let a = value.slice(0, -2);
+              if (a < 400) {
+                return parseFloat (value) *1.1;
+              }
+            }
+          });
+        });
+      });
+      $(document).ready(function(){
+        $(".square2").click(function(){
+          $(this).css({
+            left: function(index, value) {
+              let a = value.slice(0, -2);
+              if (a < 1000) {
+                return parseFloat (value) /1.1;
+              }
+            }
+          });
+        });
+      });
+      $(document).ready(function(){
+        $(".square2").click(function(){
+          $(this).css({
+            top: function(index, value) {
+              let a = value.slice(0, -2);
+              if (a < 1000) {
+                return parseFloat (value) /1.1;
+              }
+            }
+          });
+        });
+      });
+      $(document).ready(function(){
+        $(".square3").click(function(){
+          $(this).css({
+            left: function(index, value) {
+              let a = value.slice(0, -2);
+              if (a < 1000) {
+                return parseFloat (value) *1.1;
+              }
+            }
+          });
+        });
+      });
+      $(document).ready(function(){
+        $(".square3").click(function(){
+          $(this).css({
+            top: function(index, value) {
+              let a = value.slice(0, -2);
+              if (a < 1000) {
+                return parseFloat (value) /1.1;
+              }
+            }
+          });
+        });
+      });
+      $(document).ready(function(){
+        $(".circle4").click(function(){
+          $(this).css({
+            opacity: function(index, value) {
+              let a = value.slice(0, -1);
+              if (a < 100) {
+                return parseFloat (value) *1.5;
+              }
+            }
+          });
+        });
+      });
+      $(document).ready(function(){
+        $(".circle5").click(function(){
+          $(this).css({
+            opacity: function(index, value) {
+              let a = value.slice(0, -1);
+              if (a > 0) {
+                return parseFloat (value) /1.5;
+              }
+            }
+          });
+        });
+      });
+      $(document).ready(function(){
+        $(".square4").click(function(){
+          $(this).css({
+            width: function(index, value) {
+              let a = value.slice(0, -2);
+              if (a > 50) {
+                return parseFloat (value) /1.1;
+              }
+            }
+          });
+        });
+      });
+      $(document).ready(function(){
+        $(".square4").click(function(){
+          $(this).css({
+            height: function(index, value) {
+              let a = value.slice(0, -2);
+              if (a > 50) {
+                return parseFloat (value) /1.1;
+              }
+            }
+          });
+        });
+      });
+      $(document).ready(function(){
+        $(".square5").click(function(){
+          $(this).css({
+            width: function(index, value) {
+              let a = value.slice(0, -2);
+              if (a > 50) {
+                return parseFloat (value) /2.2;
+              }
+            }
+          });
+        });
+      });
+      $(document).ready(function(){
+        $(".square5").click(function(){
+          $(this).css({
+            height: function(index, value) {
+              let a = value.slice(0, -2);
+              if (a > 50) {
+                return parseFloat (value) /1.1;
+              }
+            }
+          });
+        });
+      });
+    </script>
+
+
+
+
+  </head>
+  <body>
+    <p><strong>JavaScript анимации по клику</strong></p>
+    <div class="circle"></div>
+    <div class="square green"></div>
+    <div class="circle2"></div>
+    <div class="circle3"></div>
+    <div class="square2"></div>
+    <div class="square3"></div>
+    <div class="circle4"></div>
+    <div class="circle5"></div>
+    <div class="square4"></div>
+    <div class="square5"></div>
+  </body>
+</html>
